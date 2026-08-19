@@ -1,0 +1,45 @@
+<svg viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d2540"/>
+      <stop offset="45%" stop-color="#2c5578"/>
+      <stop offset="75%" stop-color="#6f97ad"/>
+      <stop offset="100%" stop-color="#aec7d1"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe9b3"/>
+      <stop offset="100%" stop-color="#ffc978"/>
+    </linearGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5b7d94"/>
+      <stop offset="100%" stop-color="#41627a"/>
+    </linearGradient>
+    <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#37556c"/>
+      <stop offset="100%" stop-color="#243d51"/>
+    </linearGradient>
+    <linearGradient id="near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c3345"/>
+      <stop offset="100%" stop-color="#101f2c"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="1000" fill="url(#sky)"/>
+  <circle cx="1180" cy="260" r="90" fill="url(#sun)" opacity="0.9"/>
+
+  <!-- Far snow peaks -->
+  <path d="M0,480 L150,300 L260,420 L400,250 L520,400 L650,220 L800,410 L900,300 L1020,430 L1160,270 L1300,420 L1440,300 L1600,440 L1600,1000 L0,1000 Z" fill="url(#far)"/>
+  <path d="M150,300 L200,340 L260,420 L310,360 Z M400,250 L450,300 L520,400 L560,340 Z M650,220 L700,270 L800,410 L840,340 Z M1160,270 L1210,320 L1300,420 L1340,360 Z" fill="#eaf2f6" opacity="0.55"/>
+
+  <!-- Mid ridge -->
+  <path d="M0,620 L120,470 L230,560 L380,410 L520,580 L680,440 L830,600 L980,460 L1120,590 L1280,440 L1420,580 L1600,480 L1600,1000 L0,1000 Z" fill="url(#mid)"/>
+  <path d="M120,470 L165,510 L230,560 L270,510 Z M380,410 L425,455 L520,580 L560,510 Z M680,440 L725,485 L830,600 L865,520 Z M1280,440 L1325,485 L1420,580 L1455,510 Z" fill="#dfe9ee" opacity="0.5"/>
+
+  <!-- Near dark silhouette range -->
+  <path d="M0,760 L100,640 L220,730 L360,590 L500,720 L660,600 L820,740 L960,610 L1120,730 L1300,600 L1460,720 L1600,630 L1600,1000 L0,1000 Z" fill="url(#near)"/>
+  <path d="M360,590 L405,630 L500,720 L540,660 Z M960,610 L1000,650 L1120,730 L1150,660 Z" fill="#c9d8de" opacity="0.35"/>
+
+  <!-- subtle birds -->
+  <path d="M300,180 q10,-14 20,0 q10,-14 20,0" stroke="#eaf2f6" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M360,210 q8,-11 16,0 q8,-11 16,0" stroke="#eaf2f6" stroke-width="3" fill="none" opacity="0.5"/>
+</svg>
