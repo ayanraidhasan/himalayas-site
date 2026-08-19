@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HIMALAYAS Trial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-the-study.html">About the Study</a></li>
+      <li><a href="meet-the-team.html">Meet the Team</a></li>
+      <li><a href="newsletters.html">Newsletters</a></li>
+      <li><a href="tips-tricks.html">Tips &amp; Tricks</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>HIMALAYAS Trial</h1>
+    <p class="tagline">Harmonized Interventions to Maintain Health via Appropriate risk factor
+       modification and Lifestyle changes in pediatric, Adolescent and Young Adult cancer Survivors</p>
+    <a class="btn" href="#about-the-study">Read More</a>
+  </div>
+</section>
+
+<section id="about-the-study" class="about-section">
+  <div class="about-text">
+    <h2>About The Study</h2>
+    <span class="about-underline"></span>
+    <p>The HIMALAYAS Trial = Harmonized Interventions to Maintain health via Appropriate risk factor
+       modification and Lifestyle changes in Pediatric, Adolescent, and Young Adult cancer Survivors</p>
+
+    <p>Cancer-related cardiovascular disease is a major health concern and a leading cause of death in
+       select groups of pediatric, adolescent, and young adult cancer survivors (AYAs). Cardiovascular
+       disease affects ~33% of AYAs.</p>
+
+    <p>Using a randomized controlled design, this study is designed to evaluate the impact of a
+       cardio-oncology rehabilitation (CORE) program on cardiovascular and psychosocial health in AYAs
+       with mild cancer-related heart dysfunction (called stage B heart failure).</p>
+
+    <a class="btn" href="about-the-study.html">Read More</a>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <span class="stat-number" data-target="336">0</span>
+      <span class="stat-label">Participants</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="5">0</span>
+      <span class="stat-label">Sites Across Canada</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="24">0</span>
+      <span class="stat-label">Month Follow-Up</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-inner">
+
+    <div class="contact-left">
+      <h2>Contact Us</h2>
+      <p>Have questions about the study or want to learn more? Reach out to our team &mdash;
+         we're happy to help.</p>
+      <a class="btn light-btn" href="contact.html">Read More</a>
+    </div>
+
+    <div class="contact-right">
+      <ul class="contact-details">
+        <li>
+          <span class="icon">&#128205;</span>
+          <span>200 Elizabeth St,<br>Toronto, ON M5G 2C4</span>
+        </li>
+        <li>
+          <span class="icon">&#9742;</span>
+          <span>416-340-4800</span>
+        </li>
+        <li>
+          <span class="icon">&#128337;</span>
+          <span>Hours: 9am &ndash; 5pm</span>
+        </li>
+      </ul>
+
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=200+Elizabeth+St,+Toronto,+ON+M5G+2C4&output=embed"
+          width="100%" height="260" style="border:0;"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> HIMALAYAS Trial. All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const counters = document.querySelectorAll('.stat-number');
+  const duration = 1500;
+
+  function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const start = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.floor(eased * target);
+      el.textContent = value;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  counters.forEach((counter) => observer.observe(counter));
+});
+</script>
+
+</body>
+</html>
